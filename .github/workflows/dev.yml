@@ -7,10 +7,8 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout to Dev Branch
-        uses: actions/checkout@dev
       - name: Install Dependencies
-        run: yarn
+        run: npm ci
       - name: Run Linter
         run: yarn lint
       - name: Build

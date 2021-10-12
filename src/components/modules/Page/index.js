@@ -8,6 +8,7 @@ const Page = ({theme, meta, children}) => {
   return <ThemeProvider theme={theme}>
     <GlobalStyle />
     <SEOHead title={meta.title} description={meta.description}/>
+
     {children}
   </ThemeProvider>
 }

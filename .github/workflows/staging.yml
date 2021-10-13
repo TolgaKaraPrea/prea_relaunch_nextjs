@@ -1,0 +1,17 @@
+name: Dev Build & Test
+on:
+  pull_request:
+    branches:
+      - staging
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Linter
+        run: yarn lint
+      - name: Build
+        run: yarn build

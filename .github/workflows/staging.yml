@@ -1,23 +1,17 @@
-name: Deploy to Firebase Hosting
+name: Dev Build & Test
 on:
-  push:
+  pull_request:
     branches:
-      - release
+      - staging
 jobs:
-  build:
-    name: Build & Deploy
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: npm install
+        run: yarn install
+      - name: Run Linter
+        run: yarn lint
       - name: Build
-        run: npm run build
-
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.PREA_WEBSITE }}
+        run: yarn build

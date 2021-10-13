@@ -4,6 +4,15 @@
   "pages": {
     "*": ["common"],
     "/": ["home"],
-    "/about": ["about"]
+    "/asset-classes": ["asset-classes"],
+    "asset-classes/building-land": ["building-land"],
+    "asset-classes/datacenter": ["datacenter"],
+    "asset-classes/healthcare": ["healthcare"],
+    "asset-classes/hotel": ["hotel"],
+    "asset-classes/living": ["living"],
+    "asset-classes/logistic": ["logistic"],
+    "asset-classes/office": ["office"],
+    "asset-classes/retail": ["retail"],
+    "/404": ["error"]
   }
 }

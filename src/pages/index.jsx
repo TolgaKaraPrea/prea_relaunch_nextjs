@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Page from "../components/modules/Page";
 import {lightTheme} from "../utils/styles/themes";
 import HomeOverview from '../components/content/Home';

@@ -11,11 +11,6 @@ export default function Home() {
   return (
     <Page theme={lightTheme} meta={{title: t('home:metaTitle'), description: t('home:metaDescription')}}>
       <HomeOverview />
-      <h1>Images</h1>
-      <a href='https://nextjs.org/docs/api-reference/next/image' target={'__blank'}>Link to docs</a>
-      <Image src={FourKImage} />
-      <Image src={FourKImage} width={500} height={500} />
-      <Image src={FourKImage} quality={100} placeholder={'blur'} />
     </Page>
   )
 }

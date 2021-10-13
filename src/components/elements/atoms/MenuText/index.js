@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby-plugin-intl';
+import Link from 'next/link';
 
 const StyledMenuText = styled(Link)`
   color: var(--menu-text-color);

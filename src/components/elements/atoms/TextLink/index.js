@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby-plugin-intl';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const StyledTextLink = styled(Link)`

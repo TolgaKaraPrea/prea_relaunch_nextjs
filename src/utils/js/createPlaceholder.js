@@ -4,7 +4,7 @@ const path = require('path');
 
 const RL = readline.createInterface(process.stdin, process.stdout);
 
-const DESTINATION_FOLDER = path.resolve(__dirname, 'static');
+const DESTINATION_FOLDER = path.resolve(__dirname, 'public');
 
 const _getName = (callback) => {
   RL.question('Image name? ', (name) => {

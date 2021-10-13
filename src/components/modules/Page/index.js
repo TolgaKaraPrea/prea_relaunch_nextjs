@@ -2,7 +2,7 @@ import {ThemeProvider} from "styled-components";
 import Head from 'next/head'
 import GlobalStyle from "../../../utils/styles/global";
 import SEOHead from "./components/SEOHead";
-import { useCallback } from 'react';
+
 
 const Page = ({theme, meta, children}) => {
   return <ThemeProvider theme={theme}>

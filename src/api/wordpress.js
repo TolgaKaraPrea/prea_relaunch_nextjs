@@ -1,6 +1,6 @@
 export async function getPostBySlug(context) {
   const res = await fetch(process.env.WORDPRESS_GRAPHQL_ENDPOINT, {
-    method: 'POST',W
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(
       {

@@ -1,11 +1,5 @@
 {
-    "internationalization": {
-      "pages": {
-        "services": {
-          "submit": "Submit Button-de",
-          "test": "Prea-de",
-          "title": "de-Also, we strongly encourage you to use extract-react-intl-messages. You can generate json automatically"
-        }
-      }
-    }
+    "submit": "Submit Button de",
+    "test": "Prea de",
+    "title": "de Also, we strongly encourage you to use extract-react-intl-messages. You can generate json automatically"
   }

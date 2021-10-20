@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
   // }, [locale]);
   // <IntlProvider locale={locale} messages={messages[locale]}>
   return (
-    <IntlProvider locale={locale} messages={deMessages}>
+    <IntlProvider locale={locale} messages={message}>
       <Component {...pageProps} />
     </IntlProvider>
   );

@@ -8,7 +8,7 @@ export default function Home() {
   const {t} = useTranslation()
   return (
     <Page theme={lightTheme} meta={{title: t('home:metaTitle'), description: t('home:metaDescription')}}>
-      <HomeOverview />
+       <HomeOverview />
     </Page>
   )
 }

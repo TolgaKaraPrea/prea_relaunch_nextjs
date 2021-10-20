@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 export const NavigationContainer = styled.div`
-    background: blueviolet;
-    padding: 50px;
-`
+  display: flex;
+  justify-content: space-between;
+  background: blueviolet;
+  padding: 50px;
+`;

@@ -1,4 +1,11 @@
 {
-  "submit": "Submit Button",
-  "test": "Prea"
+  "internationalization": {
+    "pages": {
+      "services": {
+        "submit": "Submit Button-An",
+        "test": "Prea-An",
+        "title": "Also, we strongly encourage you to use extract-react-intl-messages. You can generate json automatically"
+      }
+    }
+  }
 }

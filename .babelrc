@@ -11,7 +11,12 @@
         "preprocess": false
       }
     ],
-   
+    [
+      "react-intl-auto",
+      {
+        "removePrefix": "src/",
+      },
+    ],
 
       
   

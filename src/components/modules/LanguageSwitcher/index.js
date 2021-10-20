@@ -5,21 +5,17 @@ import i18n from '../../../internationalization/pages/services/i18n';
 import * as S from './style';
 
 
-export default function LanguageSwitcher(props) {
+export default function LanguageSwitcher() {
   const intl = useIntl();
 
-  // console.log(props, 'props');
-
-  const { locale } = useRouter();
   const router = useRouter();
 
   function changeLocale(nextLocale) {
-    console.log(router, "ROUTER");
-    // console.log(nextLocale, 'local NEW');
+
     const { pathname, asPath, query } = router;
     router.push({ pathname, query }, asPath, { locale: nextLocale });
   }
-  console.log(intl, "intl!!!!")
+
   const handleLanguageSwitch = (loc) => {
     console.log(loc, "LOC!!!!")
 

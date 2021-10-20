@@ -1,17 +1,14 @@
-import { useIntl } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
 import useTranslation from 'next-translate/useTranslation';
 import i18n from 'src/internationalization/pages/services/i18n';
 
 const HomeOverview = ({}) => {
   const { t } = useTranslation();
   const intl = useIntl();
-  console.log(i18n.submit, '!!!!');
-  
-  const x = async () => {
-    const data = await import('@components/json.json');
-    console.log(data);
-  };
-x()
+
+  console.log(intl, 'INTL');
+  console.log(intl.formatMessage(i18n.submit), 'ggggggggggg');
+
   return (
     <div>
       <h1>{t('home:metaTitle')}</h1>
@@ -21,6 +18,7 @@ x()
       </a>
 
       <p>{intl.formatMessage(i18n.submit)}</p>
+      <p>{intl.formatMessage(i18n.title)}</p>
       {/* <button aria-label='Submit Button'>
         {intl.formatMessage({
           id: 'j.submit',

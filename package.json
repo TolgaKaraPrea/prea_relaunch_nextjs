@@ -8,18 +8,27 @@
     "start": "next start",
     "lint": "next lint",
     "test-build": "next lint & next build",
-    "placeholder": "node src/utils/js/createPlaceholder.js"
+    "placeholder": "node src/utils/js/createPlaceholder.js",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "update-translations": "extract-messages -l=en -o locales/en -d en --flat false 'internationalization/**/!(*.test).js'",
+    "update-translations-de": "extract-messages -l=de -o locales/de -d de --flat false 'internationalization/**/!(*.test).js'"
   },
   "dependencies": {
+    "babel-plugin-inline-json-import": "^0.3.2",
+    "fs": "0.0.1-security",
     "next": "11.1.2",
     "next-translate": "^1.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-intl": "^5.20.13",
     "sharp": "^0.29.1",
     "styled-components": "^5.3.1",
     "yarn": "^1.22.15"
   },
   "devDependencies": {
+    "@formatjs/cli": "^4.3.2",
+    "babel-plugin-formatjs": "^10.3.10",
+    "babel-plugin-react-intl-auto": "^3.3.0",
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.14.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -28,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "extract-react-intl-messages": "^4.1.1",
     "prettier": "^2.3.2"
   }
 }

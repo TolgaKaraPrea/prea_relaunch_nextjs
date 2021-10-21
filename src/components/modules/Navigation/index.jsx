@@ -1,7 +1,13 @@
-import * as S from './style'
+import LanguageSwitcher from '../LanguageSwitcher';
+import * as S from './style';
 
 const Navigation = () => {
-  return <S.NavigationContainer>Navbar</S.NavigationContainer>
-}
+  return (
+    <S.NavigationContainer>
+      Navbar
+      <LanguageSwitcher />
+    </S.NavigationContainer>
+  );
+};
 
-export default Navigation
+export default Navigation;

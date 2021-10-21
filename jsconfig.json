@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@internationalization/*": ["internationalization/*"],
+        "@components/*": ["src/components/*"],
+        "@constant/*": ["src/constant/*"],
+        "@helpers/*": ["src/helpers/*"],
+        "@locales/*": ["locales/*"],
+        "@pages/*": ["src/pages/*"],
+        "@hook/*": ["src/hook/*"],
+        "@static/*": ["static/*"],
+        "@utils/*": ["utils/*"],
+      },
+      "exclude": ["node_modules", "dist"]
+      
+    }
+  }
+  

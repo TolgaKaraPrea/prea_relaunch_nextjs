@@ -141,9 +141,7 @@ export const StyledFooterSocialLink = styled.a`
   }
 `;
 
-const TextLink = ({
-  type = 1, path, children, isNewTab,
-}) => {
+const TextLink = ({ type = 1, path, children, isNewTab }) => {
   switch (type) {
     case 1:
       return <StyledTextLinkOne to={`/${path}`}>{children}</StyledTextLinkOne>;

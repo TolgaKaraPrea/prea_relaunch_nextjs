@@ -6,8 +6,8 @@ const RL = readline.createInterface(process.stdin, process.stdout);
 
 const DESTINATION_FOLDER = path.resolve(__dirname, 'public');
 
-const _getName = (callback) => {
-  RL.question('Image name? ', (name) => {
+const _getName = callback => {
+  RL.question('Image name? ', name => {
     if (name.length < 5) {
       RL.write('image name has to more then 5 letters\n');
       return _getName(callback);
@@ -20,10 +20,10 @@ const _getName = (callback) => {
   });
 };
 
-const getName = () => new Promise((r) => _getName(r));
+const getName = () => new Promise(r => _getName(r));
 
-const _getWidth = (callback) => {
-  RL.question('Image width (in px)?', (width) => {
+const _getWidth = callback => {
+  RL.question('Image width (in px)?', width => {
     try {
       width = parseInt(width);
       if (!Number.isInteger(width)) {
@@ -37,10 +37,10 @@ const _getWidth = (callback) => {
     }
   });
 };
-const getWidth = () => new Promise((r) => _getWidth(r));
+const getWidth = () => new Promise(r => _getWidth(r));
 
-const _getHeight = (callback) => {
-  RL.question('Image height (in px)? ', (height) => {
+const _getHeight = callback => {
+  RL.question('Image height (in px)? ', height => {
     try {
       height = parseInt(height);
       if (!Number.isInteger(height)) {
@@ -54,7 +54,7 @@ const _getHeight = (callback) => {
     }
   });
 };
-const getHeight = () => new Promise((r) => _getHeight(r));
+const getHeight = () => new Promise(r => _getHeight(r));
 
 (async () => {
   const name = await getName();
@@ -70,9 +70,9 @@ const getHeight = () => new Promise((r) => _getHeight(r));
         r: 238,
         g: 19,
         b: 139,
-        alpha: 1,
-      },
-    },
+        alpha: 1
+      }
+    }
   })
     .composite([
       {
@@ -80,13 +80,15 @@ const getHeight = () => new Promise((r) => _getHeight(r));
      <rect x="0" y="0" width="${width}" height="${height}" fill="#ee138b" />
      <text x="10" y="20" font-size="12" fill="#fff">${name}</text>
    </svg>`),
-        gravity: 'center',
-      },
+        gravity: 'center'
+      }
     ])
     .jpeg()
     .toFile(path.resolve(DESTINATION_FOLDER, name));
 
-  console.log(`image "${name}" (${width}px/${height}px) created in "${path.resolve(DESTINATION_FOLDER)}"`);
+  console.log(
+    `image "${name}" (${width}px/${height}px) created in "${path.resolve(DESTINATION_FOLDER)}"`
+  );
 
   process.exit();
 })();

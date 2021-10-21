@@ -1,8 +1,7 @@
-import * as S from './style'
+import * as S from './style';
 
 const Footer = () => {
+  return <S.FooterContainer>Footer</S.FooterContainer>;
+};
 
-  return <S.FooterContainer>Footer</S.FooterContainer>
-}
-
-export default Footer
+export default Footer;

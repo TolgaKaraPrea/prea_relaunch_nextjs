@@ -1,14 +1,13 @@
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import useTranslation from 'next-translate/useTranslation';
-import i18n from 'src/internationalization/pages/services/i18n';
+import servicesI18n from '@internationalization/pages/services/i18n';
+import { useFormatMessage } from 'src/hooks/useFormatMessage';
 
-const HomeOverview = ({}) => {
-  const { t } = useTranslation();
+const HomeOverview = () => {
   const intl = useIntl();
-
-  console.log(intl, 'INTL');
-  console.log(intl.formatMessage(i18n.submit), 'ggggggggggg');
-
+  const { f } = useFormatMessage(intl); //react-intl
+  const { t } = useTranslation(); // next-translation
+  console.log(intl);
   return (
     <div>
       <h1>{t('home:metaTitle')}</h1>
@@ -17,14 +16,8 @@ const HomeOverview = ({}) => {
         Link to docs
       </a>
 
-      <p>{intl.formatMessage(i18n.submit)}</p>
-      <p>{intl.formatMessage(i18n.title)}</p>
-      {/* <button aria-label='Submit Button'>
-        {intl.formatMessage({
-          id: 'j.submit',
-          defaultMessage: 'Submit Button'
-        })}
-      </button> */}
+      <p>{f(servicesI18n.title)}</p>
+      <button aria-label="Submit Button">{f(servicesI18n.submit)}</button>
     </div>
   );
 };

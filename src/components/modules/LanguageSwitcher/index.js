@@ -1,28 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import { useIntl } from 'react-intl';
-import i18n from '../../../internationalization/pages/services/i18n';
 import * as S from './style';
-
 
 export default function LanguageSwitcher() {
   const intl = useIntl();
-
   const router = useRouter();
 
-  function changeLocale(nextLocale) {
+  const handleLanguageSwitch = loc => {
+    let nextLocale = loc === 'en' ? 'en' : 'de';
+    changeLocale(nextLocale);
+  };
 
+  function changeLocale(nextLocale) {
     const { pathname, asPath, query } = router;
     router.push({ pathname, query }, asPath, { locale: nextLocale });
   }
-
-  const handleLanguageSwitch = (loc) => {
-    console.log(loc, "LOC!!!!")
-
-    let nextLocale = loc === 'de' ? 'de' : loc === 'en' ? 'en' : 'en';
-    console.log(nextLocale, 'nextLocale!!')
-    changeLocale(nextLocale);
-  };
 
   return (
     <S.LanguageSwitcherWrapper>

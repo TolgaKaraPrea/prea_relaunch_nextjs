@@ -15,6 +15,7 @@
       "react-intl-auto",
       {
         "removePrefix": "src/",
+        "filebase": false
       },
     ],
 

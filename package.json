@@ -9,12 +9,9 @@
     "lint": "next lint",
     "test-build": "next lint & next build",
     "placeholder": "node src/utils/js/createPlaceholder.js",
-    "update-translations": "extract-messages -l=en -o locales/en -d en --flat false './src/**/!(*.test).js'",
-    "extract": "formatjs extract",
-    "extract:i18n": "formatjs extract '{pages,components,sections}/**/*.{js,ts,tsx}' --format simple --id-interpolation-pattern '[sha512:contenthash:base64:6]' --out-file locales/en.json",
-    "extract2": "formatjs extract '(components||pages)/**/*.js' --out-file locales/en/en.json",
-    "compile:i18n": "formatjs compile-folder --ast --format simple content/locales content/compiled-locales",
-    "i18n": "npm run extract:i18n && npm run compile:i18n"
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "update-translations": "extract-messages -l=en -o locales/en -d en --flat false 'internationalization/**/!(*.test).js'",
+    "update-translations-de": "extract-messages -l=de -o locales/de -d de --flat false 'internationalization/**/!(*.test).js'"
   },
   "dependencies": {
     "babel-plugin-inline-json-import": "^0.3.2",

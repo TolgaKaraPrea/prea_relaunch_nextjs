@@ -1,32 +1,24 @@
 import { defineMessages } from 'react-intl';
 
-export default defineMessages({
-  // test: 'Prea-An',
-  // submit: 'Submit Button-An',
+ const servicesI18n = defineMessages({
+  // test: 'Prea-EN',
+  // submit: 'Submit Button-EN',
   // title:
   //   'Also, we strongly encourage you to use extract-react-intl-messages. You can generate json automatically'
-  // id: `${scope}.test'`,
 
   test: {
     id: 'test',
-    defaultMessage: 'Prea'
+    defaultMessage: 'Prea-EN'
   },
   submit: {
     id: 'submit',
-    defaultMessage: 'Submit Button'
+    defaultMessage: 'Submit Button-EN'
   },
   title: {
     id: 'title',
     defaultMessage:
       'Also, we strongly encourage you to use extract-react-intl-messages. You can generate json automatically'
   }
-
-  // test2: {
-  //   id: `${scope}.test'`,
-  //   defaultMessage: 'Prea'
-  // },
-  // test3: {
-  //   id: `${scope}.test'`,
-  //   defaultMessage: 'Prea'
-  // }
 });
+
+export default servicesI18n

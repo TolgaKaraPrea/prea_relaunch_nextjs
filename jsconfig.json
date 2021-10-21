@@ -2,7 +2,7 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@internationalization/*": ["src/internationalization/*"],
+        "@internationalization/*": ["internationalization/*"],
         "@components/*": ["src/components/*"],
         "@constant/*": ["src/constant/*"],
         "@helpers/*": ["src/helpers/*"],

@@ -142,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
-    background-color: ${({theme}) => theme.body};
+    background-color: ${({ theme }) => theme.body};
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
   }

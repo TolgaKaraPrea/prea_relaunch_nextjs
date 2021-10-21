@@ -3,45 +3,34 @@ import { IntlProvider } from 'react-intl';
 import enMessages from '@locales/en/en.json';
 import deMessages from '@locales/de/de.json';
 import { useEffect, useState } from 'react';
-
-// const messages = {
-//   en: enMessages,
-//   de: deMessages,
-// }
+import App from 'next/app';
 
 function MyApp({ Component, pageProps }) {
   const { locale } = useRouter();
-  const [message, setMessage] = useState({});
-  console.log(locale, 'locale');
-  // console.log(messages[locale], '0000')
-  // const test = locale === 'de' ? 'de' : locale === 'en' ? 'en' : 'en';
+  const [message, setMessage] = useState(false);
+
   useEffect(() => {
     if (locale === 'de') setMessage(deMessages);
     if (locale === 'en') setMessage(enMessages);
-    console.log('here');
+    console.log('HERE! ');
     console.log(message, 'message');
   });
 
-  // console.log(props, 'props');
-  // const newLocal = locale === 'de' ? deMessages : locale === 'en' ? enMessages : enMessages;
-  // useEffect(() => {
-  // console.log(newLocal, 'landMessages=======');
-  //   setLandMessages(newLocal, 'newLocal');
-  //   console.log(landMessages, 'landMessages=======');
-  // }, [locale]);
-  // <IntlProvider locale={locale} messages={messages[locale]}>
+
   return (
-    <IntlProvider locale={locale} messages={message}>
+    <IntlProvider locale={locale} messages={Object.keys(message).length > 0 ? message : deMessages}>
       <Component {...pageProps} />
     </IntlProvider>
   );
 }
 
-export default MyApp;
-
-export const getStaticPaths = ({ locale }) => {
-  console.log(locale, 'in hererere');
-  return {
-    props: 'hi'
-  };
+MyApp.getInitialProps = async ({ Component, ctx }) => {
+  console.log(ctx, 'getInitialProps');
+  const pageProps = Component.getInitialProps ? await Component.getInitialProps(ctx) : {};
+  if (Object.keys(pageProps).length > 0) {
+    return { pageProps };
+  } else {
+    return {};
+  }
 };
+export default MyApp;

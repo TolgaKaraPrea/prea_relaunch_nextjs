@@ -7,7 +7,8 @@ const HomeOverview = () => {
   const intl = useIntl();
   const { f } = useFormatMessage(intl); //react-intl
   const { t } = useTranslation(); // next-translation
-  console.log(intl);
+  // console.log(intl);
+
   return (
     <div>
       <h1>{t('home:metaTitle')}</h1>

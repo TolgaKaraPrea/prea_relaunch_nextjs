@@ -5,8 +5,7 @@ import deMessages from '@locales/de/de.json';
 
 function MyApp({ Component, pageProps, localMessage }) {
   const { locale } = useRouter();
-
-  console.log(localMessage, 'localMessage from props');
+  // console.log(localMessage, 'localMessage from props');
 
   return (
     <IntlProvider locale={locale} messages={localMessage}>
@@ -18,7 +17,6 @@ function MyApp({ Component, pageProps, localMessage }) {
 MyApp.getInitialProps = async ({ Component, ctx }) => {
   if (ctx) {
     const localMessage = ctx.locale === 'en' ? enMessages : deMessages;
-    console.log(localMessage, 'localMessage');
     return { localMessage };
   } else {
     return {};
